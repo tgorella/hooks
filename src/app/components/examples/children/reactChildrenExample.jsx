@@ -17,7 +17,6 @@ const FormComponent = ({ children }) => {
             onChange: handleChange,
             value: data[child.props.name] || ""
         };
-        console.log(child);
         return React.cloneElement(child, config);
     });
 };

@@ -5,19 +5,20 @@ import SmallTitle from "../../common/typografy/smallTitle";
 function factorial(n) {
     return n ? n * factorial(n - 1) : 1;
 }
+
 function runFactorial(n) {
     console.log("Running Factorial");
-    factorial(n);
+    return factorial(n);
 }
 const ComplexCalculateExample = () => {
     const [value, setValue] = useState(100);
     const [otherState, setOtherState] = useState(false);
     const buttonColor = otherState ? "primary" : "secondary";
+
+    const fact = useMemo(() => runFactorial(value), [value]);
     useEffect(() => {
         console.log("render");
     });
-
-    const fact = useMemo(() => runFactorial(value), [value]);
     return (
         <>
             <CardWrapper>
