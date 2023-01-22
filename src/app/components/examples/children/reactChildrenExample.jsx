@@ -17,7 +17,6 @@ const FormComponent = ({ children }) => {
             onChange: handleChange,
             value: data[child.props.name] || ""
         };
-
         console.log(child);
         return React.cloneElement(child, config);
     });
@@ -35,7 +34,7 @@ const ReactChildrenExample = () => {
             <Divider />
             <FormComponent>
                 <TextField name="email" label="email" />
-                <TextField name="password" label="password" type="password"/>
+                <TextField name="password" label="password" type="password" />
             </FormComponent>
         </CardWrapper>
     );
